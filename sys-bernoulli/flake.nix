@@ -19,7 +19,19 @@
           boot.loader.grub.version = 2;
           boot.loader.grub.device = "/dev/sda";
 
-          networking.hostName = "bernoulli";
+          networking = {
+            hostName = "bernoulli"; # Define your hostname.
+            useNetworkd = true;
+
+            defaultGateway = "172.31.0.1";
+            interfaces = {
+              enp6s18 = {
+                ipv4.addresses = [ { address = "172.31.0.6"; prefixLength = 16; } ];
+              };
+            };
+
+            nameservers = [ "8.8.8.8" ];
+          };
 
           time.timeZone = "Europe/London";
           i18n.defaultLocale = "en_GB.UTF-8";
@@ -29,6 +41,11 @@
           };
 
           services.openssh.enable = true;
+          users.users.root.openssh.authorizedKeys.keys = [
+            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJjUz1FruDlg5VNmvd4wi7DiXbMJcN4ujr8KtQ6OhlSc stary@pc"
+            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ+q372oe3sFtBQPAH93L397gYGYrjeGewzoOW97gSy1 stary@wheatley"
+          ];
+
           system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
           system.stateVersion = "22.11";
         })
