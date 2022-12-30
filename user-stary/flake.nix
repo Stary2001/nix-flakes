@@ -17,7 +17,7 @@
       extraSpecialArgs = { inherit inputs; };
       modules = [ ({ ... }: {
         home.homeDirectory = "/home/stary";
-        home.username = "stary"; # TODO: update me!
+        home.username = "stary";
         home.stateVersion = "22.11";
       }) ];
     };

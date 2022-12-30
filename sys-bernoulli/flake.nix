@@ -12,10 +12,27 @@
     nixosConfigurations.default = inputs.nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = { inherit inputs; };
-      modules = [ ({ inputs, lib, ... }: {
-        system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
-        system.stateVersion = "22.11";
-      }) ];
+      modules = [ 
+        (import ./hardware-configuration.nix)
+        ({ inputs, lib, ... }: {
+          boot.loader.grub.enable = true;
+          boot.loader.grub.version = 2;
+
+          networking.hostName = "bernoulli";
+
+          time.timeZone = "Europe/London";
+          i18n.defaultLocale = "en_GB.UTF-8";
+          console = {
+            font = "Lat2-Terminus16";
+            keyMap = "gb";
+            useXkbConfig = true; # use xkbOptions in tty.
+          };
+
+          services.openssh.enable = true;
+          system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
+          system.stateVersion = "22.11";
+        })
+      ];
     };
   };
 }
