@@ -26,7 +26,6 @@
           console = {
             font = "Lat2-Terminus16";
             keyMap = "gb";
-            useXkbConfig = true; # use xkbOptions in tty.
           };
 
           services.openssh.enable = true;
