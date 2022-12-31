@@ -14,6 +14,8 @@
       specialArgs = { inherit inputs; };
       modules = [ 
         (import ./hardware-configuration.nix)
+        (import ./persist.nix)
+
         ({ inputs, lib, ... }: {
           boot.loader.grub.enable = true;
           boot.loader.grub.version = 2;
