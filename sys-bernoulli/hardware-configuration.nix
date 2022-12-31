@@ -41,5 +41,11 @@
       options = [ "bind" ];
     };
 
+  fileSystems."/var/lib/acme" =
+    { device = "/nix/persist/var/lib/acme";
+      fsType = "none";
+      options = [ "bind" ];
+  };
+
   swapDevices = [ ];
 }
