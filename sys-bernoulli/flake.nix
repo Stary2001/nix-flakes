@@ -16,6 +16,8 @@
         (import ./hardware-configuration.nix)
         (import ./persist.nix)
 
+        (import ./nginx.nix)
+
         ({ inputs, lib, ... }: {
           boot.loader.grub.enable = true;
           boot.loader.grub.version = 2;
