@@ -37,6 +37,17 @@
             nameservers = [ "8.8.8.8" ];
           };
 
+          networking.firewall.enable = true;
+          networking.firewall.allowedTCPPorts = [
+            22 # ssh
+            80 # http
+            443 # https
+          ];
+
+          # none (tm)
+          networking.firewall.allowedUDPPorts = [
+          ];
+
           time.timeZone = "Europe/London";
           i18n.defaultLocale = "en_GB.UTF-8";
           console = {
