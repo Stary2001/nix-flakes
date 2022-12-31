@@ -31,6 +31,7 @@
             interfaces = {
               enp6s18 = {
                 ipv4.addresses = [ { address = "172.31.0.6"; prefixLength = 16; } ];
+                ipv6.addresses = [ { address = "fd99:9999:9999::6"; prefixLength = 48; } ];
               };
             };
 
