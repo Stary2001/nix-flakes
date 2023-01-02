@@ -19,6 +19,8 @@
         home.homeDirectory = "/home/stary";
         home.username = "stary";
         home.stateVersion = "22.11";
+
+        programs.home-manager.enable = true;
       }) ];
     };
   };
