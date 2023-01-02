@@ -8,6 +8,9 @@
 
       "9net.org" = {
         enableACME = true; forceSSL = true;
+        
+        root = "/data/http/";
+
         locations."= /".return = "302 https://stary.zone/";
         locations."/.well-known/keybase.txt".root = "/data/http";
 
