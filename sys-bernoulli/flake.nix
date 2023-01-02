@@ -22,6 +22,10 @@
         (import ./nginx.nix)
 
         ({ inputs, lib, ... }: {
+          nix.extraOptions = ''
+            experimental-features = nix-command flakes
+          '';
+
           boot.loader.grub.enable = true;
           boot.loader.grub.version = 2;
           boot.loader.grub.device = "/dev/sda";
