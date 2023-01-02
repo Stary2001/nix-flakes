@@ -77,6 +77,9 @@
 
       "sono.9net.org" = {
         # TODO complex site
+
+        enableACME = true; forceSSL = true;
+        root = "/data/http-sono";
       };
 
       "zerotier.9net.org" = {
@@ -117,7 +120,7 @@
 
       "stary.zone" = {
         enableACME = true; forceSSL = true;
-        root = "/srv/ci/main";
+        root = "/srv/http/stary.zone";
       };
     };
   };
