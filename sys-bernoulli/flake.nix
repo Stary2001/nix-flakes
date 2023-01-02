@@ -15,7 +15,6 @@
       modules = [ 
         (import ./hardware-configuration.nix)
         (import ./persist.nix)
-
         (import ./nginx.nix)
 
         ({ inputs, lib, ... }: {

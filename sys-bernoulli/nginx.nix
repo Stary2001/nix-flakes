@@ -1,4 +1,4 @@
-{ lib, ... } : 
+{ ... } : 
 {
   services.nginx = {
     enable = true;
