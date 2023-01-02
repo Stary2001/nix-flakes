@@ -8,6 +8,10 @@
 
   outputs = inputs: let
     system = "x86_64-linux";
+    myKeys = [
+            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJjUz1FruDlg5VNmvd4wi7DiXbMJcN4ujr8KtQ6OhlSc stary@pc"
+            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ+q372oe3sFtBQPAH93L397gYGYrjeGewzoOW97gSy1 stary@wheatley"
+          ];
   in {
     nixosConfigurations.default = inputs.nixpkgs.lib.nixosSystem {
       inherit system;
@@ -56,10 +60,14 @@
           };
 
           services.openssh.enable = true;
-          users.users.root.openssh.authorizedKeys.keys = [
-            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJjUz1FruDlg5VNmvd4wi7DiXbMJcN4ujr8KtQ6OhlSc stary@pc"
-            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ+q372oe3sFtBQPAH93L397gYGYrjeGewzoOW97gSy1 stary@wheatley"
-          ];
+          users.users.root.openssh.authorizedKeys.keys = myKeys;
+
+          users.users.stary = {
+            isNormalUser = true;
+            createHome = true;
+            extraGroups = [ "wheel" ];
+            openssh.authorizedKeys.keys = myKeys;
+          };
 
           system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
           system.stateVersion = "22.11";
