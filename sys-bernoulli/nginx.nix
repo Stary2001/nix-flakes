@@ -26,16 +26,16 @@
       };
 
       "api.9net.org" = {
-        enableACME = true; forceSSL = false;
+        enableACME = true; addSSL = true;
         locations."/".proxyPass = "http://172.31.0.1:6969";
       };
 
       "bernoulli.9net.org" = { enableACME = true; forceSSL = true; };
 
       "blog.9net.org" = {
-        enableACME = true; forceSSL = false;
-        locations."/".return = "301 https://stary.zone/blog/";
+        enableACME = true; addSSL = true;
         locations."/2019/10/godot/".return = "301 https://stary.zone/blog/godot/";
+        locations."/".return = "301 https://stary.zone/blog/";
       };
 
       "parts.9net.org" = {
