@@ -62,8 +62,12 @@
 
       "hass.9net.org" = {
         enableACME = true; forceSSL = true;
-        locations."/".proxyPass = "http://172.31.0.223:8123";
-        locations."/".extraConfig = "proxy_buffering off;";
+
+        locations."/" = {
+          proxyPass = "http://172.31.0.223:8123";
+          proxyWebsockets = true;
+          extraConfig = "proxy_buffering off;";
+        };
       };
 
       "influx.9net.org" = {
