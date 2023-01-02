@@ -29,6 +29,11 @@
       fsType = "ext4";
     };
 
+  fileSystems."/data" =
+    { device = "/dev/disk/by-uuid/a53aa95b-c0ca-416a-be6b-0d836bd5ae3f";
+      fsType = "ext4";
+    };
+
   fileSystems."/etc/nixos" =
     { device = "/nix/persist/etc/nixos";
       fsType = "none";
@@ -43,6 +48,12 @@
 
   fileSystems."/var/lib/acme" =
     { device = "/nix/persist/var/lib/acme";
+      fsType = "none";
+      options = [ "bind" ];
+  };
+
+  fileSystems."/srv" =
+    { device = "/data/srv";
       fsType = "none";
       options = [ "bind" ];
   };
