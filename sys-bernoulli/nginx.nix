@@ -134,4 +134,9 @@
     certs = {
     };
   };
+
+  services.oauth2_proxy.nginx = {
+    proxy = "http://172.31.0.3:4180";
+    virtualHosts = [ "zerotier.9net.org" ];
+  };
 }
