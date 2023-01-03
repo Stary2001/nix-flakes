@@ -135,8 +135,18 @@
     };
   };
 
+  services.oauth2_proxy = {
+    enable = true;
+    httpAddress = "http://0.0.0.0:4180";
+    provider = "google";
+    email = {
+      addresses = "mctinfoilball@gmail.com";
+    };
+
+    keyFile = "/nix/persist/oauth2_proxy.secrets";
+  };
+
   services.oauth2_proxy.nginx = {
-    proxy = "http://172.31.0.3:4180";
     virtualHosts = [ "zerotier.9net.org" ];
   };
 }
