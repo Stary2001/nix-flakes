@@ -51,6 +51,7 @@
             22 # ssh
             80 # http
             443 # https
+            8448 # matrix
           ];
 
           # none (tm)
