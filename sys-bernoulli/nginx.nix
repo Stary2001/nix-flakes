@@ -8,6 +8,7 @@
 
       "9net.org" = {
         enableACME = true; forceSSL = true;
+	serverAliases = ["www.9net.org"];
         
         root = "/data/http/";
 
@@ -23,6 +24,16 @@
           proxyPass = "http://172.31.0.1:8008";
           extraConfig = "access_log off;";
         };
+      };
+
+      "matrix" = {
+        enableACME = true; forceSSL = true;
+	serverName = "9net.org";
+        locations."/".proxyPass = "http://172.31.0.1:8008";
+        listen = [
+          { addr = "0.0.0.0"; port = 8448; ssl = true; }
+          { addr = "[::]"; port = 8448; ssl = true; }
+        ];
       };
 
       "api.9net.org" = {
