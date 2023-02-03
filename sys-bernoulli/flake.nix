@@ -75,6 +75,11 @@
             openssh.authorizedKeys.keys = myKeys;
           };
 
+          users.users.remote-builder = {
+            isNormalUser = true;
+            openssh.authorizedKeys.keys = ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCsQ7jQV3LpsQ6p2FQe0CQslBgt1p5YrPqQddsVylHzd2gniqcZFmJnzg29kiUMslNXzcxLF0JCE7JGItcCttbjpkPDgepKdkQkS49jo0wgW4It5mCT/FM3nGm16Z0Uk0G9U/WCAccpAANRLTGZhlFjVhVgNyIbL3AYXtC/sOTVcyp3rDaBQS8mc8M+eTIV88yOL7t3ZNWkgWV3nqj03JCSTtaerAa06L+mMXeolLfWLi29u6z9ECVpo3sWAMMuuyrLd/jtTpJo47SJoVtUJq6NKoc4iYZojf+bR5S4Rwn7L5bF4BUpAm7ooI8me8YbB2AchNEwAB6CYh8J4VJZsGZWVTR16Q3xuxAqc/nDd/7MkgNA/OAc6Ka+bvyjTDLuIBGKaVm9MrwfEgJNSjGogjA4Mtlaxy3vLtiTDR8R/xgL43K75l0PBT/a9/Vgat+zyFs/lBXaOw9PID7xgo9rh8Ba7YQpC8Q+L00A3vcpAvIMmiU8z9PVH21zPNhwi1NLCsM= stary@goddard"];
+          };
+
           system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
           system.stateVersion = "22.11";
         })
