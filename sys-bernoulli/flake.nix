@@ -77,7 +77,7 @@
 
           users.users.remote-builder = {
             isNormalUser = true;
-            openssh.authorizedKeys.keys = ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCsQ7jQV3LpsQ6p2FQe0CQslBgt1p5YrPqQddsVylHzd2gniqcZFmJnzg29kiUMslNXzcxLF0JCE7JGItcCttbjpkPDgepKdkQkS49jo0wgW4It5mCT/FM3nGm16Z0Uk0G9U/WCAccpAANRLTGZhlFjVhVgNyIbL3AYXtC/sOTVcyp3rDaBQS8mc8M+eTIV88yOL7t3ZNWkgWV3nqj03JCSTtaerAa06L+mMXeolLfWLi29u6z9ECVpo3sWAMMuuyrLd/jtTpJo47SJoVtUJq6NKoc4iYZojf+bR5S4Rwn7L5bF4BUpAm7ooI8me8YbB2AchNEwAB6CYh8J4VJZsGZWVTR16Q3xuxAqc/nDd/7MkgNA/OAc6Ka+bvyjTDLuIBGKaVm9MrwfEgJNSjGogjA4Mtlaxy3vLtiTDR8R/xgL43K75l0PBT/a9/Vgat+zyFs/lBXaOw9PID7xgo9rh8Ba7YQpC8Q+L00A3vcpAvIMmiU8z9PVH21zPNhwi1NLCsM= stary@goddard"];
+            openssh.authorizedKeys.keys = ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDZ5oA4xKTGRKwQBixd+lvkH5aRAIuLzjd2UzjOb/ZtAI1U+JFYMEF2WzjSXKSVb2j8P7+qU/KtoidumMoV/2gcb7aZ1BLJGOnLTASUPaX4zCmY/GBDDYwkJ4vCLYlU7jhVUdFSJzZEtxN3PYa0wFE0lOITyUOWOgRpzXA2QNmkInfnc0wj4ElbybAgvGX9kpVJPvgOnqIZvfsxJ3UfPHDo1AfXgPX0chpY79sBMuaMFfd9NFQU12+H4S5aU4ZX07UkXG0S9z0XapLATyBSs21hsX/18ARu+11CA3ppKjn+8pVuxvYwzGbs51GmH6RXOjHRYuGXXFPlN7Y7t73wGegypQWBJSZgDrfHTwNQ6WAyBjX8X6wT2U76WH99p7O75/K99cOMZMDjGJfORJzCXZ7eXqb08pdcBcQ/x09Hm5D7GFiGEDNQAFrR0FpKdgHaKovVgkIKTmFVHXEjGmzDMxX+YK5wiGriNQ+Z4Mvw47zMXt6Aq5upg+Ueo4Rzmcm29FU= root@goddard"];
           };
 
           system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
