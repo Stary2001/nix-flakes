@@ -23,7 +23,7 @@
     extraConfig = ''
       bridge=br0
       ieee80211n=1
-      wpa_psk=/nix/persist/etc/hostapd-psk
+      wpa_psk_file=/nix/persist/etc/hostapd-psk
     '';
   };
   
