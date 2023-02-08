@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    common.url = "github:stary2001/nix-flakes?dir=common";
     rock5b-nixos.url = "github:aciceri/rock5b-nixos";
   };
 
@@ -23,6 +24,7 @@
         (import ./hardware-configuration.nix)
         (import ./legacy.nix)
 
+        inputs.common.nixosModules.nine-net
         inputs.rock5b-nixos.nixosModules.kernel
 
         ({ inputs, lib, ... }: {

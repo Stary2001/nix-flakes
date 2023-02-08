@@ -1,7 +1,5 @@
 { config, lib, pkgs, ...}:
 {
-  imports = [ ./9net.nix ];
-
   # Rock5 stuff
   boot.loader.grub.enable = false;
   boot.loader.generic-extlinux-compatible.enable = true;
