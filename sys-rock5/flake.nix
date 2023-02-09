@@ -23,6 +23,7 @@
         inputs.common.nixosModules.nine-net
         inputs.common.nixosModules.ssh-keys
         inputs.rock5b-nixos.nixosModules.kernel
+        inputs.common.nixosModules.locale
 
         ({ inputs, lib, ... }: {
           nixpkgs.config.allowUnfree = true;
@@ -62,13 +63,6 @@
             67 # dhcp
             5060 # sip udp
           ];
-
-          time.timeZone = "Europe/London";
-          i18n.defaultLocale = "en_GB.UTF-8";
-          console = {
-            font = "Lat2-Terminus16";
-            keyMap = "uk";
-          };
 
           services.openssh.enable = true;
 

@@ -4,15 +4,11 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    common.url = "github:stary2001/nix-flakes?dir=common";
   };
 
   outputs = inputs: let
     system = "x86_64-linux";
-    myKeys = [
-            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJjUz1FruDlg5VNmvd4wi7DiXbMJcN4ujr8KtQ6OhlSc stary@pc"
-            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ+q372oe3sFtBQPAH93L397gYGYrjeGewzoOW97gSy1 stary@wheatley"
-            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOLg5nSbedQYRzm4BAU1OIYpaiTwP+afCAE3BvPcG7OI eddsa-key-20210602" # Windows VM
-          ];
   in {
     nixosConfigurations.default = inputs.nixpkgs.lib.nixosSystem {
       inherit system;
@@ -21,6 +17,9 @@
         (import ./hardware-configuration.nix)
         (import ./persist.nix)
         (import ./nginx.nix)
+
+        inputs.common.nixosModules.ssh-keys
+        inputs.common.nixosModules.locale
 
         ({ inputs, lib, ... }: {
           nix.extraOptions = ''
@@ -58,21 +57,12 @@
           networking.firewall.allowedUDPPorts = [
           ];
 
-          time.timeZone = "Europe/London";
-          i18n.defaultLocale = "en_GB.UTF-8";
-          console = {
-            font = "Lat2-Terminus16";
-            keyMap = "uk";
-          };
-
           services.openssh.enable = true;
-          users.users.root.openssh.authorizedKeys.keys = myKeys;
 
           users.users.stary = {
             isNormalUser = true;
             createHome = true;
             extraGroups = [ "wheel" ];
-            openssh.authorizedKeys.keys = myKeys;
           };
 
           users.users.remote-builder = {

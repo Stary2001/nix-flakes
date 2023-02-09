@@ -25,6 +25,7 @@
         inputs.common.nixosModules.nine-net 
         inputs.common.nixosModules.ssh-keys
         inputs.common.nixosModules.avahi
+        inputs.common.nixosModules.locale
 
         ({ inputs, lib, ... }: {
           nixpkgs.config.allowUnfree = true;
@@ -73,13 +74,6 @@
             111 2049 4000 4001 4002 20048 # nfsv3
             3702 # Samba WSDD
           ];
-
-          time.timeZone = "Europe/London";
-          i18n.defaultLocale = "en_GB.UTF-8";
-          console = {
-            font = "Lat2-Terminus16";
-            keyMap = "uk";
-          };
 
           services.openssh.enable = true;
 
