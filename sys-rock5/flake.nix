@@ -18,6 +18,7 @@
       modules = [ 
         (import ./hardware-configuration.nix)
         (import ./legacy.nix)
+        (import ./asterisk.nix)
 
         inputs.common.nixosModules.nine-net
         inputs.common.nixosModules.ssh-keys
@@ -53,10 +54,13 @@
             443 # https
             5355 # llmnr
             5201 # iperf
+
+            5060 # sip
           ];
 
           networking.firewall.allowedUDPPorts = [
             67 # dhcp
+            5060 # sip udp
           ];
 
           time.timeZone = "Europe/London";
