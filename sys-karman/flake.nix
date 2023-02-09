@@ -39,7 +39,7 @@
 
           networking = {
             useDHCP = false;
-            wireless.enable = true;
+            #wireless.enable = true;
 
             hostName = "karman"; # Define your hostname.
             hostId = "3302c071";
@@ -50,9 +50,9 @@
                 useDHCP = true;
               };
 
-              "wlp0s20u2" = {
-                useDHCP = true;
-              };
+              #"wlp0s20u2" = {
+              #  useDHCP = true;
+              #};
             };
 
             nameservers = [ "8.8.8.8" ];
