@@ -13,7 +13,7 @@ let customSmartdNotify = pkgs.writeScript "smartd-notify.sh" ''
   '';
 in
 {
-  imports = [ ../secrets/wifi.nix ../9net.nix ../avahi.nix ];
+  imports = [ ];
 
   fileSystems."/".options = [ "defaults" "size=2G" "mode=755" ];
 
