@@ -2,15 +2,17 @@
   "nodes": {
     "common": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "dir": "common",
-        "lastModified": 1675851371,
-        "narHash": "sha256-+dtl0A9QcdzPSPGVxUuOq22QfgjXkIZMrz08yz3wfXc=",
+        "lastModified": 1675933761,
+        "narHash": "sha256-xCPnmYo+YDjAR3e3j11LzvOmXintkZjlZaEWWGJOc1E=",
         "owner": "stary2001",
         "repo": "nix-flakes",
-        "rev": "3037d46e47edc286d42e0e22db7e159f8213bb80",
+        "rev": "9843d99260d4010373a5b6d40204621345e10583",
         "type": "github"
       },
       "original": {
@@ -70,11 +72,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1675673983,
-        "narHash": "sha256-8hzNh1jtiPxL5r3ICNzSmpSzV7kGb3KwX+FS5BWJUTo=",
+        "lastModified": 1675763311,
+        "narHash": "sha256-bz0Q2H3mxsF1CUfk26Sl9Uzi8/HFjGFD/moZHz1HebU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5a350a8f31bb7ef0c6e79aea3795a890cf7743d4",
+        "rev": "fab09085df1b60d6a0870c8a89ce26d5a4a708c2",
         "type": "github"
       },
       "original": {
@@ -84,43 +86,13 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1675757258,
-        "narHash": "sha256-pIRer8vdsoherlRKpzfnHbMZ5TsAcvRlXHCIaHkIUbg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "af96094e9b8eb162d70a84fa3b39f4b7a8b264d2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-22.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1656239181,
-        "narHash": "sha256-wW1xRFBn376yGloXZ4QzBE4hjipMawpV18Lshd9QSPw=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "f2537a505d45c31fe5d9c27ea9829b6f4c4e6ac5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "f2537a505d45c31fe5d9c27ea9829b6f4c4e6ac5",
-        "type": "github"
-      }
-    },
     "rock5b-nixos": {
       "inputs": {
         "fan-control": "fan-control",
         "kernel-src": "kernel-src",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1672309501,
@@ -139,7 +111,7 @@
     "root": {
       "inputs": {
         "common": "common",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "rock5b-nixos": "rock5b-nixos"
       }

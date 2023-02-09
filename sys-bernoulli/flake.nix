@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     common.url = "github:stary2001/nix-flakes?dir=common";
+    common.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs: let

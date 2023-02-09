@@ -2,15 +2,17 @@
   "nodes": {
     "common": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "dir": "common",
-        "lastModified": 1675932256,
-        "narHash": "sha256-aTKrDB+J8hnkO2gNxmO9JjAjHlmz/Gc2Y2xa6ZJG+MU=",
+        "lastModified": 1675933761,
+        "narHash": "sha256-xCPnmYo+YDjAR3e3j11LzvOmXintkZjlZaEWWGJOc1E=",
         "owner": "stary2001",
         "repo": "nix-flakes",
-        "rev": "20c6d66d43ec70a863be5dab004439efda4e7080",
+        "rev": "9843d99260d4010373a5b6d40204621345e10583",
         "type": "github"
       },
       "original": {
@@ -52,26 +54,10 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1675757258,
-        "narHash": "sha256-pIRer8vdsoherlRKpzfnHbMZ5TsAcvRlXHCIaHkIUbg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "af96094e9b8eb162d70a84fa3b39f4b7a8b264d2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-22.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "common": "common",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }
     }
