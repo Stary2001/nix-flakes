@@ -25,6 +25,7 @@
         ({ inputs, lib, ... }: {
           nix.extraOptions = ''
             experimental-features = nix-command flakes
+            trusted-users = remote-builder
           '';
 
           boot.loader.grub.enable = true;
