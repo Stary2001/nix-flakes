@@ -17,6 +17,9 @@
         nine-net = {pkgs, ...}: {
           imports = [./9net.nix];
         };
+        avahi = {pkgs, ...}: {
+          imports = [./avahi.nix];
+        };
         ssh-keys = {pkgs, ...}: {
           users.users.root.openssh.authorizedKeys.keys = myKeys;
           users.users.stary.openssh.authorizedKeys.keys = myKeys;

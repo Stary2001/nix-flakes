@@ -23,7 +23,7 @@
         (import ./legacy.nix)
 
         inputs.common.nixosModules.nine-net 
-        inputs.common.nixosModules.ssh-keys 
+        inputs.common.nixosModules.ssh-keys inputs.common.nixosModules.avahi
 
         ({ inputs, lib, ... }: {
           nixpkgs.config.allowUnfree = true;
