@@ -20,6 +20,9 @@
         avahi = {pkgs, ...}: {
           imports = [./avahi.nix];
         };
+        locale = {pkgs, ...}: {
+          imports = [./locale.nix];
+        };
         ssh-keys = {pkgs, ...}: {
           users.users.root.openssh.authorizedKeys.keys = myKeys;
           users.users.stary.openssh.authorizedKeys.keys = myKeys;
