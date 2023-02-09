@@ -8,11 +8,11 @@
       },
       "locked": {
         "dir": "common",
-        "lastModified": 1675933761,
-        "narHash": "sha256-xCPnmYo+YDjAR3e3j11LzvOmXintkZjlZaEWWGJOc1E=",
+        "lastModified": 1675937874,
+        "narHash": "sha256-03MRSN0/hPD1wDTyxoGMr09tUhgfgXA+H6ROYnbiWfs=",
         "owner": "stary2001",
         "repo": "nix-flakes",
-        "rev": "9843d99260d4010373a5b6d40204621345e10583",
+        "rev": "4ce904c89014b86252f1c3db75d665553510cb66",
         "type": "github"
       },
       "original": {

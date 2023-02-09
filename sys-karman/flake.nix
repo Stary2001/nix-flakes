@@ -1,5 +1,5 @@
 {
-  description = "system configuration for bernoulli";
+  description = "system configuration for karman";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
