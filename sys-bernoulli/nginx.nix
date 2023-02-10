@@ -1,5 +1,11 @@
 { ... } : 
 {
+  fileSystems."/srv/http/9net.org/user-stary" =
+    { device = "/home/stary/www";
+      fsType = "none";
+      options = [ "bind" ];
+  };
+
   services.nginx = {
     enable = true;
     recommendedProxySettings = true;
