@@ -16,8 +16,7 @@
         locations."/.well-known/keybase.txt".root = "/data/http";
 
         locations."~ ^/~(.+?)(/.*)?$" = {
-          #alias = "/home/$1/www$2";
-          root = "/srv/http/9net.org/";
+          alias = "/srv/http/9net.org/user-$1/$2";
           extraConfig = "autoindex on;";
         };
 
