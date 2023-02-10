@@ -19,11 +19,17 @@
     ssid = "iot";
     wpa = true;
     countryCode = "GB";
+    channel = 6;
     
     extraConfig = ''
       bridge=br0
-      ieee80211n=1
       wpa_psk_file=/nix/persist/etc/hostapd-psk
+      wpa_pairwise=TKIP CCMP
+
+      #ht_capab=[HT40-][DSSS_CCK-40][SHORT-GI-20]
+      ht_capab=[SHORT-GI-20]
+
+      ieee80211n=1
     '';
   };
   
