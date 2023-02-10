@@ -58,5 +58,11 @@
       options = [ "bind" ];
   };
 
+  fileSystems."/home" =
+    { device = "/data/home";
+      fsType = "none";
+      options = [ "bind" ];
+  };
+
   swapDevices = [ ];
 }
