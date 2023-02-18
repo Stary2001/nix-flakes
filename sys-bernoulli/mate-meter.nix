@@ -26,7 +26,7 @@
   -H 'sec-fetch-mode: cors' \
   -H 'sec-fetch-site: cross-site' \
   -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.0.0 Safari/537.36' \
-  --compressed | ${pkgs.jq}/bin/jq -r '.data | .[] | "\(.name) \(.inventory.total)"' | ${pkgs.coreutils}/bin/sed 's/$/<br>/g' > /home/stary/www/mate-meter/index.html
+  --compressed | ${pkgs.jq}/bin/jq -r '.data | .[] | "\(.name) \(.inventory.total)"' | ${pkgs.gnused}/bin/sed 's/$/<br>/g' > /home/stary/www/mate-meter/index.html
     '';
 
     serviceConfig = {
