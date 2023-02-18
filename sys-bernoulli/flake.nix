@@ -18,6 +18,7 @@
         (import ./hardware-configuration.nix)
         (import ./persist.nix)
         (import ./nginx.nix)
+        (import ./mate-meter.nix)
 
         inputs.common.nixosModules.ssh-keys
         inputs.common.nixosModules.locale
