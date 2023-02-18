@@ -1,4 +1,4 @@
-{ ... } : 
+{ pkgs, ... } : 
 {
   systemd.timers."mate-meter" = {
     wantedBy = [ "timers.target" ];
