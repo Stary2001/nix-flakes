@@ -9,7 +9,7 @@
 
     rock5b-nixos.url = "github:aciceri/rock5b-nixos";
     # Hack! Need to make this use old pahole to build this kernel version.
-    #rock5b-nixos.inputs.nixpkgs.follows = "nixpkgs";
+    rock5b-nixos.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs: let
@@ -28,7 +28,7 @@
         inputs.rock5b-nixos.nixosModules.kernel
         inputs.common.nixosModules.locale
 
-        ({ inputs, lib, ... }: {
+        ({ inputs, lib, config, ... }: {
           nixpkgs.config.allowUnfree = true;
 
           nix.extraOptions = ''
@@ -74,6 +74,11 @@
             createHome = true;
             extraGroups = [ "wheel" ];
           };
+
+          boot.extraModulePackages = [
+            # crap usb wifi 
+            config.boot.kernelPackages.rtl88x2bu
+          ];
 
           system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
           system.stateVersion = "22.11";
