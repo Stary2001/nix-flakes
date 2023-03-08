@@ -8,11 +8,11 @@
       },
       "locked": {
         "dir": "common",
-        "lastModified": 1676729629,
-        "narHash": "sha256-9ZRP8pOVhZU3kIrjgm3u6BJBdH1r0D+cMSwfJlFlLyU=",
+        "lastModified": 1677965218,
+        "narHash": "sha256-zqmGlYKjeOlIWbXQ0+SPsOFwvm4F2XvI4McM0grc4bM=",
         "owner": "stary2001",
         "repo": "nix-flakes",
-        "rev": "4dd49e469a2c46249ddb50fb8983452502097ecf",
+        "rev": "b4ffd17f90f67c6b84ee6aaf5c69073c1ecd12dd",
         "type": "github"
       },
       "original": {
@@ -41,11 +41,11 @@
     "kernel-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1676631659,
-        "narHash": "sha256-TjAF7BPSDy5iHSk8byp+vsKop0V+rqrmr+TXLqXLB2M=",
-        "owner": "radxa",
-        "repo": "kernel",
-        "rev": "a9583fb47e9b96c552f458a376207141602c0025",
+        "lastModified": 1678269597,
+        "narHash": "sha256-e+aJmoHjQ9hIk+qSoh+gQRY/U79fta2png1JSN9vagM=",
+        "owner": "stary2001",
+        "repo": "radxa-kernel",
+        "rev": "7d1b3215d2f98db56a1caa2e5a5a69ea6bb00392",
         "type": "github"
       },
       "original": {
@@ -56,11 +56,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1676094287,
-        "narHash": "sha256-z2gc84Hs9JmzmSmQ/n3Ano/uhYPS4uF8jZPcgKDTfb8=",
+        "lastModified": 1678137616,
+        "narHash": "sha256-T+lWTRdcYaOnZQW+Ehdlg+YldC2l9cq2GXJFPq22Nxc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "103fe0800b9d739c279997561c9da9d242d5b6b8",
+        "rev": "7edcdf7b169c33cd3eef9aba50521ce93ee666b8",
         "type": "github"
       },
       "original": {

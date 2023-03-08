@@ -8,7 +8,8 @@
     common.inputs.nixpkgs.follows = "nixpkgs";
 
     rock5b-nixos.url = "github:aciceri/rock5b-nixos";
-    # Hack! Need to make this use old pahole to build this kernel version.
+    rock5b-nixos.inputs.kernel-src.url = "github:stary2001/radxa-kernel?ref=linux-5.10-gen-rkr3.4-pahole-fix";
+
     rock5b-nixos.inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -35,9 +36,18 @@
             experimental-features = nix-command flakes
           '';
 
+          nixpkgs.overlays = [
+            (self: super: {
+              linuxPackages_rock5 = super.linuxPackages_rock5.extend (self: super: {
+                my_rtl88x2bu = super.rtl88x2bu.overrideAttrs(finalAttrs: previousAttrs: {
+                  patches = [./fix-rtl88x2bu.patch ];
+                });
+              });
+            })
+	  ];
+
           networking = {
             useDHCP = false;
-
             hostName = "rock5"; # Define your hostname.
             hostId = "b8f50e18";
           
@@ -77,7 +87,7 @@
 
           boot.extraModulePackages = [
             # crap usb wifi 
-            config.boot.kernelPackages.rtl88x2bu
+            config.boot.kernelPackages.my_rtl88x2bu
           ];
 
           system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
